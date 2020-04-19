@@ -1,10 +1,10 @@
 module.exports = {
-  syntax: 'postcss-scss',
   plugins: [
-    require('postcss-import'),
-    require('tailwindcss'),
-    require('autoprefixer'),
-
+		require('autoprefixer'),
+		require('postcss-font-magician'),
+		require('tailwindcss'),
+		require('precss'),
+		require('postcss-import')
   ]
 
 }

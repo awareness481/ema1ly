@@ -7,12 +7,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "autoprefixer": "^9.7.6",
-    "concurrently": "^5.1.0",
-    "node-sass": "^4.13.1",
-    "postcss": "^7.0.27",
-    "postcss-import": "^12.0.1",
-    "postcss-scss": "^2.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -20,10 +14,9 @@
     "tailwindcss": "^1.2.0"
   },
   "scripts": {
+    "css": "postcss ./src/css/main.css -o ./public/main.css -w",
+    "dev": "concurrently 'npm run css' 'npm start'",
     "start": "react-scripts start",
-    "css": "postcss ./src/scss/_main.scss -o ./public/main.css -w",
-    "cc": "concurrently 'npm run css' 'npm start'",
-    "watch": "npm run css && npm start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -44,6 +37,13 @@
     ]
   },
   "devDependencies": {
-    "postcss-cli": "^7.1.0"
+    "autoprefixer": "^9.7.6",
+    "concurrently": "^5.1.0",
+    "postcss": "^7.0.27",
+    "postcss-cli": "^7.1.0",
+    "postcss-font-magician": "^2.3.1",
+    "postcss-import": "^12.0.1",
+    "postcss-utilities": "^0.8.4",
+    "precss": "^4.0.0"
   }
 }
